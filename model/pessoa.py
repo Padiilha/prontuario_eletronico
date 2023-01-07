@@ -1,12 +1,14 @@
-from abc import ABC, abstractmethod
+from abc import ABC
+
+from model.consulta import Consulta
 
 
 class Pessoa(ABC):
     def __init__(self, nome: str, cpf: str, cns: str):
-        self.__seq_pessoa = int
         self.__nome = nome
         self.__cpf = cpf
         self.__cns = [cns]
+        self.__historico_consulta = list()
 
     @property
     def nome(self) -> str:
@@ -31,3 +33,10 @@ class Pessoa(ABC):
     @cns.setter
     def cns(self) -> str:
         return self.__cns
+
+    @property
+    def historico_consulta(self) -> list:
+        return self.__historico_consulta
+
+    def add_consulta(self, consulta: Consulta):
+        self.__historico_consulta.append(consulta)

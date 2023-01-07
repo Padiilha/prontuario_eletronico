@@ -8,6 +8,10 @@ class Ubs:
         self.__bairro = bairro
 
     @property
+    def seq_ubs(self) -> int:
+        return self.__seq_ubs
+
+    @property
     def cnes(self) -> str:
         return self.__cnes
 

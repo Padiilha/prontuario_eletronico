@@ -11,3 +11,35 @@ class Consulta:
         self.__ubs = ubs
         self.__data_consulta = data_consulta
         self.__soap = list()
+
+    @property
+    def profissional(self) -> Profissional:
+        return self.__profissional
+
+    @property
+    def cidadao(self) -> Cidadao:
+        return self.__cidadao
+
+    @property
+    def ubs(self) -> Ubs:
+        return self.__ubs
+
+    @property
+    def data_consulta(self) -> str:
+        return self.__data_consulta
+
+    @property
+    def soap(self) -> list:
+        return self.__soap
+
+    def subjetivo(self, subjetivo: str):
+        self.__soap.append(subjetivo)
+
+    def objetivo(self, objetivo: str):
+        self.__soap.append(objetivo)
+
+    def avaliacao(self, avaliacao: str):
+        self.__soap.append(avaliacao)
+
+    def plano(self, plano: str):
+        self.__soap.append(plano)

@@ -43,7 +43,7 @@ class Domicilio:
         self.__cidade = cidade
 
     def add_morador(self, morador: Cidadao):
-        pass
+        self.__moradores.append(morador)
 
-    def rmv_morador(self, morador: Cidadao):
-        pass
+    def rm_morador(self, morador: Cidadao):
+        self.__moradores.remove(morador)

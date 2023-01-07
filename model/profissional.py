@@ -1,4 +1,5 @@
 from model.pessoa import Pessoa
+from model.ubs import Ubs
 
 
 class Profissional(Pessoa):
@@ -6,8 +7,11 @@ class Profissional(Pessoa):
         super().__init__(nome, cpf, cns)
         self.__seq_profissional = seq_profissional
         self.__cbo = cbo
-        self.__ubs = None
-        self.__historico_atendimentos = None
+        self.__ubs = Ubs
+
+    @property
+    def seq_profissional(self) -> int:
+        return self.__seq_profissional
 
     @property
     def cbo(self) -> str:
@@ -16,3 +20,11 @@ class Profissional(Pessoa):
     @cbo.setter
     def cbo(self, cbo: str):
         self.__cbo = cbo
+
+    @property
+    def ubs(self) -> Ubs:
+        return self.__ubs
+
+    @ubs.setter
+    def ubs(self, ubs: Ubs):
+        self.__ubs = ubs
