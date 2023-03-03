@@ -27,12 +27,12 @@ class Pessoa(ABC):
         self.__cpf = cpf
 
     @property
-    def cns(self, cns: str):
-        self.__cns = cns
+    def cns(self) -> list:
+        return self.__cns
 
     @cns.setter
-    def cns(self) -> str:
-        return self.__cns
+    def cns(self, cns: str):
+        self.__cns.append(cns)
 
     @property
     def historico_consulta(self) -> list:

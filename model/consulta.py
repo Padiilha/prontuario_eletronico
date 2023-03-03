@@ -4,7 +4,7 @@ from model.ubs import Ubs
 
 
 class Consulta:
-    def __init__(self, seq_consulta: int, profissional: Profissional, cidadao: Cidadao, ubs: Ubs, data_consulta: str):
+    def __init__(self, seq_consulta: int, profissional: Profissional, cidadao: Profissional, ubs: Ubs, data_consulta: str):
         self.__seq_consulta = seq_consulta
         self.__profissional = profissional
         self.__cidadao = cidadao
@@ -17,7 +17,7 @@ class Consulta:
         return self.__profissional
 
     @property
-    def cidadao(self) -> Cidadao:
+    def cidadao(self) -> Profissional:
         return self.__cidadao
 
     @property
@@ -27,10 +27,6 @@ class Consulta:
     @property
     def data_consulta(self) -> str:
         return self.__data_consulta
-
-    @property
-    def soap(self) -> list:
-        return self.__soap
 
     def subjetivo(self, subjetivo: str):
         self.__soap.append(subjetivo)
